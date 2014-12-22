@@ -1,0 +1,17 @@
+#include<stdio.h
+#include<stdlib.h>
+int main(void)
+{
+   printf("remove regular file\n');
+   if(remove("test.txt")==-1{
+     perror("fail to remove");
+     exit(1);
+  }
+  printf("remove dir file\n");
+  if(rename("tmp")==-1){
+  perror("fail to remove");
+  exit(1);
+  }
+  return 0;
+}
+     
