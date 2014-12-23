@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<sys/stat.h>
+#define NEW_MOD S_IRUSR|S_IRGRP|S_IROTH
+int main(void)
+{
+int fd;
+stst statbuf;
+mode_t mode;
+if(chmod("test.txt",NEW_MOD)==-1){
+perror("fail to change model");
+exit;
+}
+if(stat("test2.txt",&statbuf)==-1){
+perror("fail to stat");
+exit(1);
+}
+mode=statbuf.st_mode;
+mode &=(~S_IRWXU & ~ S_IRWXO);
+mode |=(NEW_MOD);
+if(chmod("test2.txt",mode)==-1){
+perror("fail to change model");
+}
+return 0;
+}
