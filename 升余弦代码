@@ -1,0 +1,12 @@
+%zsqE7_7.m
+Fd=1e3;
+Fs=Fd*10;
+delay=5;
+for r=[0,0.5,0.75,1]
+    num=rcosine(Fd,Fs,'fir/normal',r,delay)
+    t=0:1/Fs:1/Fs*(length(num)-1);
+    figure(1);plot(t,num);axis([0 0.01 -0.3 1.1]);hold on;
+    Hw=abs(fft(num,1000));
+    f=(1:Fs/1000:Fs)-1;
+figure(2);plot(f,Hw);axis([0 1500 0 12]);hold on;
+End
