@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+int main(void)
+{
+     int fd;
+     char buf[1024];
+     int n;
+     fd=open("test.txt",0_RDWR);
+     if(fd==-1){
+     perror("fail to open");
+     exit(1);
+     }else
+      printf("open OK\n");
+      printf("reading\n");
+      n=read(fd,buf,1024);
+      if(n==-1){
+      perror("fail to read");
+      exit(1);
+      }
+      buf[n]='\0';
+      printf(buf);
+      close(fd);
+      return 0;
+      }
