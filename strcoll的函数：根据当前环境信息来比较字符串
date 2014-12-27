@@ -1,0 +1,24 @@
+
+#include<stdio.h>
+#include<string.h>
+int main(void)
+{
+  char ch1[]="linux";
+  char ch2[]="unix";
+  int res=-1;
+  res=stroll(ch1,xh2);
+  i if(0==res)
+   {
+       printf("ch1 is equal to ch2\n");
+    }
+  else if(0<res)
+{
+   printf("ch1 is large than ch2\n");
+}
+else
+{
+   printf("ch1 is small than ch2\n");
+}
+return 0;
+}
+
